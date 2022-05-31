@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Star Wars Quote</title>
+
+</head>
+<body>
+<h1>May the force be with you!</h1>
+<form action="/sendQuote" method="POST">
+    <label>
+        Your name
+        <input type="text" placeholder="name" name="name" value="Oof">
+    </label>
+    <label>
+        Your quote
+        <input type="text" placeholder="quote" name="quote" value="May the OOF be with you">
+    </label>
+    <button type="submit">Submit</button>
+    <ul class="quotes">
+    <% for (let quote of quotes) { %>
+        <li class="quote">
+            <span><%= quote.name %></span>
+            <span><%= quote.quote %></span>
+        </li>
+    <% } %>
+    </ul>
+</form>
+</body>
+<script src="/static/js/index.js"></script>
+</html>
