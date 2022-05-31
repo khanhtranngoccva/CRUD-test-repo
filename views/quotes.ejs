@@ -11,25 +11,45 @@
 </head>
 <body>
 <h1>May the force be with you!</h1>
-<form action="/sendQuote" method="POST">
-    <label>
-        Your name
-        <input type="text" placeholder="name" name="name" value="Oof">
-    </label>
-    <label>
-        Your quote
-        <input type="text" placeholder="quote" name="quote" value="May the OOF be with you">
-    </label>
-    <button type="submit">Submit</button>
-    <ul class="quotes">
+<section>
+    <section>
+        <h2>Add quote</h2>
+        <form action="/sendQuote" method="POST">
+            <label>
+                Your name
+                <input type="text" placeholder="name" name="name" value="Yoda">
+            </label>
+            <label>
+                Your quote
+                <input type="text" placeholder="quote" name="quote" value="May the force be with you.">
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section>
+        <h2>Replace with a Darth Vader quote</h2>
+        <p>Just click this button to replace the first Yoda quote and replace it with a quote from Darth Vader!</p>
+        <button id="replace">Replace quote!</button>
+    </section>
+    <section>
+        <h2>Delete one quote</h2>
+        <p>Remove one quote from Mr. Darth Vader.</p>
+        <button id="deleteOne">Delete one quote!</button>
+    </section>
+    <section>
+        <h2>Delete all quotes</h2>
+        <p>The ultimate reset button that removes absolutely everything.</p>
+        <button id="deleteAll">Delete everything!</button>
+    </section>
+</section>
+<ul class="quotes">
     <% for (let quote of quotes) { %>
         <li class="quote">
             <span><%= quote.name %></span>
             <span><%= quote.quote %></span>
         </li>
     <% } %>
-    </ul>
-</form>
+</ul>
 </body>
 <script src="/static/js/index.js"></script>
 </html>

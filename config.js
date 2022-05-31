@@ -20,7 +20,9 @@ const mongoClient = new mongodb.MongoClient(mongoURL, {
 
 expressApp.set("view engine", "ejs");
 expressApp.use("/static", express.static(path.join(__dirname, "public")));
+// These functions returns the actual parser functions used by ExpressJS.
 expressApp.use(bodyParser.urlencoded({extended: true}));
+expressApp.use(bodyParser.json());
 expressApp.listen(PORT, function() {
     console.log(`Listening on port ${PORT}.`);
 });
